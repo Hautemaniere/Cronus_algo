@@ -73,7 +73,12 @@ combo sequence7 {  // Mouvement erratique
     wait(3000);  // Pause
 }
 
-combo sequence8 {}
+combo sequence8 {  // Avancer et reculer avec pauses
+    set_val(STICK_ANGLE, 0, 100); wait(10000);  // Avance (10 sec)
+    wait(2000);  // Pause
+    set_val(STICK_ANGLE, 180, 100); wait(10000); // Recul (10 sec)
+    wait(3000);  // Pause longue
+}
 
 // Programme principal
 main {
