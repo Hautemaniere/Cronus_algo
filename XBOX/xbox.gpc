@@ -14,7 +14,14 @@
 int randomSequence;
 
 // Séquences de mouvement
-combo sequence1 {}
+combo sequence1 {  // Mouvement circulaire avec pauses
+    set_val(STICK_ANGLE, 0, 100); wait(6000);  // Avance droit (6 sec)
+    set_val(STICK_ANGLE, 90, 100); wait(6000); // Tourne à droite (6 sec)
+    wait(1000);  // Pause
+    set_val(STICK_ANGLE, 180, 100); wait(6000); // Recul (6 sec)
+    set_val(STICK_ANGLE, 270, 100); wait(6000); // Tourne à gauche (6 sec)
+    wait(2000);  // Pause
+}
 
 combo sequence2 {}
 
