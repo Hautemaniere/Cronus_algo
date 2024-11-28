@@ -23,7 +23,14 @@ combo sequence1 {  // Mouvement circulaire avec pauses
     wait(2000);  // Pause
 }
 
-combo sequence2 {}
+combo sequence2 {  // Tir + rotation aléatoire
+    set_val(BUTTON_5, 100); wait(1000);  // Tir (1 sec)
+    set_val(BUTTON_5, 0); wait(500);    // Relâcher
+    set_val(STICK_ANGLE, rand() % 360, 100); wait(5000);  // Rotation aléatoire
+    wait(2000);  // Pause
+    set_val(BUTTON_5, 100); wait(1500); // Tir (1.5 sec)
+    set_val(BUTTON_5, 0); wait(500);
+}
 
 combo sequence3 {}
 
