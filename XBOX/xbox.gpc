@@ -59,7 +59,12 @@ combo sequence5 {  // Tir rapide aléatoire
     wait(2000);
 }
 
-combo sequence6 {}
+combo sequence6 {  // Sprint en ligne droite
+    set_val(BUTTON_12, 100);  // Sprint
+    set_val(STICK_ANGLE, 0, 100); wait(15000);  // Avance rapide (15 sec)
+    set_val(BUTTON_12, 0); wait(2000);          // Relâche le sprint
+    set_val(STICK_ANGLE, 180, 100); wait(10000); // Recul (10 sec)
+}
 
 combo sequence7 {}
 
