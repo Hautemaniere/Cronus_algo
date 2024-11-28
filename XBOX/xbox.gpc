@@ -42,7 +42,13 @@ combo sequence3 {  // Pas rapides en diagonale
     set_val(STICK_ANGLE, 225, 100); wait(4000); // Retour (4 sec)
 }
 
-combo sequence4 {}
+combo sequence4 {  // Avancer, tirer, tourner
+    set_val(STICK_ANGLE, 0, 100); wait(10000);  // Avance (10 sec)
+    set_val(BUTTON_5, 100); wait(2000);         // Tir (2 sec)
+    set_val(BUTTON_5, 0); wait(500);            // Relâche
+    set_val(STICK_ANGLE, 90, 100); wait(5000);  // Tourne à droite (5 sec)
+    wait(2000);  // Pause
+}
 
 combo sequence5 {}
 
