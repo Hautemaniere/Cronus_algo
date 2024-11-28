@@ -50,7 +50,14 @@ combo sequence4 {  // Exemple : Avancer, tirer, tourner
     wait(2000);  // Pause
 }
 
-combo sequence5 {}
+combo sequence5 {  // Exemple : Tir rapide aléatoire
+    set_val(BUTTON_5, 100); wait(200);  // Tir rapide
+    set_val(BUTTON_5, 0); wait(200);   // Relâche
+    set_val(BUTTON_5, 100); wait(300);
+    set_val(BUTTON_5, 0); wait(300);
+    set_val(STICK_ANGLE, rand() % 360, 100); wait(10000); // Déplacement aléatoire (10 sec)
+    wait(2000);
+}
 
 combo sequence6 {}
 
