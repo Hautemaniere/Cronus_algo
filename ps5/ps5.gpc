@@ -10,11 +10,10 @@
 
 
 
-// Variables globales
 int randomSequence;
 
 // Séquences de mouvement
-combo sequence1 {  // Exemple : Mouvement circulaire avec pauses
+combo sequence1 {  
     set_val(STICK_ANGLE, 0, 100); wait(6000);  // Avance droit (6 sec)
     set_val(STICK_ANGLE, 90, 100); wait(6000); // Tourne à droite (6 sec)
     wait(1000);  // Pause
@@ -23,16 +22,20 @@ combo sequence1 {  // Exemple : Mouvement circulaire avec pauses
     wait(2000);  // Pause
 }
 
-combo sequence2 {  // Exemple : Tir + rotation aléatoire
+combo sequence2 {  
     set_val(BUTTON_5, 100); wait(1000);  // Tir (1 sec)
     set_val(BUTTON_5, 0); wait(500);    // Relâcher
+    set_val(BUTTON_6, 100); wait(1500); // Recharge (1.5 sec)
+    set_val(BUTTON_6, 0); wait(500);
     set_val(STICK_ANGLE, rand() % 360, 100); wait(5000);  // Rotation aléatoire
     wait(2000);  // Pause
     set_val(BUTTON_5, 100); wait(1500); // Tir (1.5 sec)
     set_val(BUTTON_5, 0); wait(500);
+    set_val(BUTTON_6, 100); wait(1500); // Recharge (1.5 sec)
+    set_val(BUTTON_6, 0); wait(500);
 }
 
-combo sequence3 {  // Exemple : Pas rapides en diagonale
+combo sequence3 {  
     set_val(STICK_ANGLE, 45, 100); wait(4000);  // En diagonale (4 sec)
     wait(1000);  // Pause
     set_val(STICK_ANGLE, 135, 100); wait(4000); // Opposé (4 sec)
@@ -42,44 +45,49 @@ combo sequence3 {  // Exemple : Pas rapides en diagonale
     set_val(STICK_ANGLE, 225, 100); wait(4000); // Retour (4 sec)
 }
 
-combo sequence4 {  // Exemple : Avancer, tirer, tourner
+combo sequence4 {  
     set_val(STICK_ANGLE, 0, 100); wait(10000);  // Avance (10 sec)
     set_val(BUTTON_5, 100); wait(2000);         // Tir (2 sec)
-    set_val(BUTTON_5, 0); wait(500);            // Relâche
+    set_val(BUTTON_5, 0); wait(500);            // Relâcher
+    set_val(BUTTON_6, 100); wait(1500);         // Recharge (1.5 sec)
+    set_val(BUTTON_6, 0); wait(500);
     set_val(STICK_ANGLE, 90, 100); wait(5000);  // Tourne à droite (5 sec)
     wait(2000);  // Pause
 }
 
-combo sequence5 {  // Exemple : Tir rapide aléatoire
+combo sequence5 {  
     set_val(BUTTON_5, 100); wait(200);  // Tir rapide
     set_val(BUTTON_5, 0); wait(200);   // Relâche
+    set_val(BUTTON_6, 100); wait(1500); // Recharge (1.5 sec)
+    set_val(BUTTON_6, 0); wait(200);
     set_val(BUTTON_5, 100); wait(300);
     set_val(BUTTON_5, 0); wait(300);
+    set_val(BUTTON_6, 100); wait(1500); // Recharge (1.5 sec)
+    set_val(BUTTON_6, 0); wait(200);
     set_val(STICK_ANGLE, rand() % 360, 100); wait(10000); // Déplacement aléatoire (10 sec)
     wait(2000);
 }
 
-combo sequence6 {  // Exemple : Sprint en ligne droite
+combo sequence6 {  
     set_val(BUTTON_12, 100);  // Sprint
     set_val(STICK_ANGLE, 0, 100); wait(15000);  // Avance rapide (15 sec)
     set_val(BUTTON_12, 0); wait(2000);          // Relâche le sprint
     set_val(STICK_ANGLE, 180, 100); wait(10000); // Recul (10 sec)
 }
 
-combo sequence7 {  // Exemple : Mouvement erratique
+combo sequence7 {  
     set_val(STICK_ANGLE, rand() % 360, 100); wait(8000);  // Déplacement aléatoire (8 sec)
     wait(2000);  // Pause
     set_val(STICK_ANGLE, rand() % 360, 50); wait(5000);   // Déplacement lent (5 sec)
     wait(3000);  // Pause
 }
 
-combo sequence8 {  // Exemple : Avancer et reculer avec pauses
+combo sequence8 {  
     set_val(STICK_ANGLE, 0, 100); wait(10000);  // Avance (10 sec)
     wait(2000);  // Pause
     set_val(STICK_ANGLE, 180, 100); wait(10000); // Recul (10 sec)
     wait(3000);  // Pause longue
 }
-
 
 // Programme principal
 main {
