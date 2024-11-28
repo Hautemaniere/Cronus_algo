@@ -5,3 +5,43 @@
 //                                                             //
 //                    made by eXo                              //
 /////////////////////////////////////////////////////////////////
+
+
+
+
+
+// Variables globales
+int randomSequence;
+
+// Séquences de mouvement
+combo sequence1 {}
+
+combo sequence2 {}
+
+combo sequence3 {}
+
+combo sequence4 {}
+
+combo sequence5 {}
+
+combo sequence6 {}
+
+combo sequence7 {}
+
+combo sequence8 {}
+
+// Programme principal
+main {
+    // Générer un numéro aléatoire entre 0 et 7
+    randomSequence = rand() % 8;
+
+    // Exécuter une séquence au hasard
+    if (randomSequence == 0) combo_run(sequence1);
+    else if (randomSequence == 1) combo_run(sequence2);
+    else if (randomSequence == 2) combo_run(sequence3);
+    else if (randomSequence == 3) combo_run(sequence4);
+    else if (randomSequence == 4) combo_run(sequence5);
+    else if (randomSequence == 5) combo_run(sequence6);
+    else if (randomSequence == 6) combo_run(sequence7);
+    else if (randomSequence == 7) combo_run(sequence8);
+}
