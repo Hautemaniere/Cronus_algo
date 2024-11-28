@@ -32,7 +32,15 @@ combo sequence2 {  // Tir + rotation aléatoire
     set_val(BUTTON_5, 0); wait(500);
 }
 
-combo sequence3 {}
+combo sequence3 {  // Pas rapides en diagonale
+    set_val(STICK_ANGLE, 45, 100); wait(4000);  // En diagonale (4 sec)
+    wait(1000);  // Pause
+    set_val(STICK_ANGLE, 135, 100); wait(4000); // Opposé (4 sec)
+    wait(1000);
+    set_val(STICK_ANGLE, 315, 100); wait(4000); // Autre diagonale (4 sec)
+    wait(1000);
+    set_val(STICK_ANGLE, 225, 100); wait(4000); // Retour (4 sec)
+}
 
 combo sequence4 {}
 
